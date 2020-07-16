@@ -1,2 +1,2 @@
-# maxsound
-MaxSound Wordpress Theme
+# MaxSound Theme for Wordpress
+
