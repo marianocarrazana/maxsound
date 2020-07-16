@@ -12,7 +12,7 @@
 			foreach ($postslist as $post) :  setup_postdata($post); ?> 
 			    <a class="card " href="<?php the_permalink(); ?>">
 			        <b class="card-title"><?php the_title(); ?>   </b>
-			        <div><?php the_excerpt(); ?></div>
+			        <div><?php echo wp_trim_words(get_the_excerpt(),30); ?></div>
 			        <div class="card-footer"><?php the_date(); ?></div>
 			    </a>
 			<?php endforeach; ?>
