@@ -8,11 +8,11 @@
         <link href="<?php echo get_template_directory_uri(); ?>/img/icons/favicon.ico" rel="shortcut icon">
         <link href="<?php echo get_template_directory_uri(); ?>/img/icons/touch.png" rel="apple-touch-icon-precomposed">
     	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/frow@3/dist/frow.min.css">
-    	<link href="https://fonts.googleapis.com/css?family=Quicksand:300,500" rel="stylesheet">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="description" content="<?php bloginfo('description'); ?>">
-
+		<link rel="stylesheet" href="https://unpkg.com/jam-icons/css/jam.min.css">
+		<link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Open+Sans:ital,wght@0,400;0,600;1,300&display=swap" rel="stylesheet">
 		<?php wp_head(); ?>
 		<script>
         // conditionizr.com
@@ -22,32 +22,60 @@
             tests: {}
         });
         </script>
-
+        <style type="text/css" media="screen">
+        	#header,#loader-header{
+				background-color: #21D4FD;
+				background-image: linear-gradient(311deg, #21D4FD 0%, #B721FF 50%, #ff0000 100%);
+			}
+        </style>
 	</head>
 	<body <?php body_class(); ?>>
 
 		<!-- wrapper -->
 		<div class="wrapper">
-
+			<div id="fake-header" class="opacity-0 <?php if (!is_home()){ echo "fixed-size"; } ?>"></div>
 			<!-- header -->
-			<header id="header" style="background-image: url(<?php header_image(); ?>)" class="frow row-between" role="banner">
-					<nav role="navigation">
-						<?php html5blank_nav(); ?>
+			<header id="header" style="background-image: url(<?php header_image(); ?>)" class="frow row-between <?php if (!is_home()){ echo "fixed-size"; } ?>" role="banner">
+					<nav class="col-1-3">
+						<button class="jam jam-menu visible-sm hidden-lg"></button>
+						<div class="visible-lg hidden-xs hidden-sm hidden-md opacity-0"><?php html5blank_nav(); ?></div>
 					</nav>
 					<!-- logo -->
-					<div class="logo">
+					<div class="logo col-1-3">
 						<a href="<?php echo home_url(); ?>">
 							<!-- svg logo - toddmotto.com/mastering-svg-use-for-a-retina-web-fallbacks-with-png-script -->
-							<img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="MaximoSound" class="logo-img">
+							<div class="logo-img"><?php echo get_bloginfo("title"); ?></div>
 						</a>
 					</div>
 					<!-- /logo -->
 
 					<!-- nav -->
-					<nav role="navigation">
-						<?php html5blank_nav(); ?>
+					<nav role="navigation" class="col-1-3">
+						<div class="visible-lg hidden-xs hidden-sm hidden-md"><?php html5blank_nav(); ?></div>
+						<button class="jam jam-menu visible-sm hidden-lg opacity-0"></button>
 					</nav>
 					<!-- /nav -->
 
 			</header>
 			<!-- /header -->
+			<?php if (is_home()){ ?>
+				<header id="loader-header" style="background-image: url(<?php header_image(); ?>)" class="frow row-between <?php if (!is_home()){ echo "fixed-size"; } ?>">
+					<div class="loader"></div>
+				</header><!-- /header -->
+<script type="text/javascript">
+	var header = document.getElementById("header");
+	window.onscroll = updateSizeHeader;
+	window.onresize = updateSizeHeader;
+	document.body.onload = function(){
+		document.getElementById("loader-header").className = "hide";
+		setTimeout(function(){document.getElementById("loader-header").style.display="none"},1000);
+	};
+	var fake_header = document.getElementById("fake-header");
+	function updateSizeHeader() {
+		var headerHeight = fake_header.clientHeight;
+		var height = headerHeight - window.scrollY;
+		if(height>68)header.style.height = height + "px";
+		else header.style.height = "68px";
+	};
+	updateSizeHeader();
+</script><?php } ?>

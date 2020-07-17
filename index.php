@@ -10,7 +10,7 @@
 			$args = array( 'category'=>1, 'numberposts' => 8, 'order'=> 'DSC', 'orderby' => 'post_date' );
 			$postslist = get_posts( $args );
 			foreach ($postslist as $post) :  setup_postdata($post); ?> 
-			    <a class="card " href="<?php the_permalink(); ?>">
+			    <a class="card p-10" href="<?php the_permalink(); ?>">
 			        <b class="card-title"><?php the_title(); ?>   </b>
 			        <div><?php echo wp_trim_words(get_the_excerpt(),30); ?></div>
 			        <div class="card-footer"><?php the_date(); ?></div>
@@ -21,26 +21,26 @@
 		<!-- /section -->
 		<section class="col-md-2-3 frow direction-column">
 			<div>
-				<div class="m-20 frow row-start">
+				<div class="mx-20 frow row-start">
 				<?php
-				$cat = get_category_by_slug("imagenes");
+				$cat = get_category_by_slug("videos");
 				$args = array('category'=>$cat->cat_ID, 'numberposts' => 3, 'order'=> 'ASC', 'orderby' => 'post_date' );
 				$postslist = get_posts( $args );
 				foreach ($postslist as $post) :  setup_postdata($post); ?> 
 					<div class="col-md-1-3">
-				    <a class="card" href="<?php the_permalink(); ?>">
-				    	<div style="background-image:url(<?php the_post_thumbnail_url(); ?>)" class="card-image"></div>
-				        <b class="card-title"><?php the_title(); ?>   </b>
+				    <a class="card mx-20" href="<?php the_permalink(); ?>">
+				    	<div style="background-image:url(<?php echo get_youtube_thumbnail(get_the_content_feed()); ?>)" class="card-video"><i class="jam jam-youtube"></i></div>
+				        <!--<b class="card-title"><?php the_title(); ?></b>-->
 				    </a>
 					</div>
 				<?php endforeach; ?>
 				</div>
 			</div>
 			<div>
-				<div class="m-20 frow row-start">
+				<div class="mx-20 frow row-start">
 				<?php
-				$cat = get_category_by_slug("videos");
-				$args = array('category'=>$cat->cat_ID, 'numberposts' => 3, 'order'=> 'ASC', 'orderby' => 'post_date' );
+				$cat = get_category_by_slug("imagenes");
+				$args = array('category'=>$cat->cat_ID, 'numberposts' => 7, 'order'=> 'ASC', 'orderby' => 'post_date' );
 				$postslist = get_posts( $args );
 				$n = 0;
 				foreach ($postslist as $post) :  setup_postdata($post); 
@@ -48,7 +48,7 @@
 					else if($n>3) echo "<div class='col-md-1-2'>";
 					else echo "<div class='col-md-1-3 col-xs-1-1'>";
 					?> 
-				    <a class="card" href="<?php the_permalink(); ?>">
+				    <a class="card mx-20" href="<?php the_permalink(); ?>">
 				    	<div style="background-image:url(<?php the_post_thumbnail_url(); ?>)" class="card-image"></div>
 				    </a>
 					</div>

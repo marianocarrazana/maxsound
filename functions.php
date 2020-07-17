@@ -465,4 +465,9 @@ function html5_shortcode_demo_2($atts, $content = null) // Demo Heading H2 short
     return '<h2>' . $content . '</h2>';
 }
 
+function get_youtube_thumbnail($content){
+    preg_match("/(?:http(?:s)?:\/\/)?(?:www\.)?(?:m\.)?(?:youtu\.be\/|youtube\.com\/(?:(?:watch)?\?(?:.*&)?v(?:i)?=|(?:embed|v|vi|user)\/))([^\?&\"'>]+)/", $content, $matches);
+    return "https://img.youtube.com/vi/".$matches[1]."/sddefault.jpg";
+}
+
 ?>

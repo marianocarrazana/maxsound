@@ -4,16 +4,16 @@
 		<!-- section -->
 		<section>
 
-			<h1><?php the_title(); ?></h1>
+			<div class="content wrapper"><h1><?php the_title(); ?></h1></div>
 
 		<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 
 			<!-- article -->
-			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+			<article id="post-<?php the_ID(); ?>" <?php post_class("card wrapper"); ?>>
 
 				<?php the_content(); ?>
 
-				<?php comments_template( '', true ); // Remove if you don't want comments ?>
+				<?php //comments_template( '', true ); // Remove if you don't want comments ?>
 
 				<br class="clear">
 
