@@ -1,15 +1,16 @@
 <!-- sidebar -->
-<aside class="sidebar" role="complementary">
-
-	<?php get_template_part('searchform'); ?>
-
-	<div class="sidebar-widget">
-		<?php if(!function_exists('dynamic_sidebar') || !dynamic_sidebar('widget-area-1')) ?>
-	</div>
-
-	<div class="sidebar-widget">
-		<?php if(!function_exists('dynamic_sidebar') || !dynamic_sidebar('widget-area-2')) ?>
-	</div>
-
+<aside id="sidebar" role="complementary">
+		<?php sidebar_nav(); ?>
 </aside>
+<div id="close_sidebarmenu" onclick="closeSideMenu()"></div>
 <!-- /sidebar -->
+<script type="text/javascript">
+function showSideMenu(){
+	document.getElementById("sidebar").className = "active";
+	document.getElementById("close_sidebarmenu").className = "active";
+}
+function closeSideMenu(){
+	document.getElementById("sidebar").className = "";
+	document.getElementById("close_sidebarmenu").className = "";
+}
+</script>

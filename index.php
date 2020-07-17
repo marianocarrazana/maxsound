@@ -4,7 +4,7 @@
 		<!-- section -->
 		<section class="col-md-1-3">
 			<div class="frow m-20 direction-column column-start">
-			<h1 style="margin: 1em"> Últimos Posts</h1>
+			<h1 class="mx-20 my-5 px-10">Actualizaciones</h1>
 
 			<?php
 			$args = array( 'category'=>1, 'numberposts' => 8, 'order'=> 'DSC', 'orderby' => 'post_date' );

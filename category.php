@@ -2,11 +2,11 @@
 
 	<main role="main">
 		<!-- section -->
-		<section>
+		<section class="content wrapper">
 
-			<h1><?php _e( 'Categories for ', 'html5blank' ); single_cat_title(); ?></h1>
+			<h1><?php single_cat_title(); ?></h1>
 
-			<?php get_template_part('loop'); ?>
+			<div class="frow"><?php get_template_part('loop'); ?></div>
 
 			<?php get_template_part('pagination'); ?>
 

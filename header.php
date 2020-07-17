@@ -24,7 +24,7 @@
         </script>
         <style type="text/css" media="screen">
         	#header,#loader-header{
-				background-color: #21D4FD;
+				background-color: #223;
 				background-image: linear-gradient(311deg, #21D4FD 0%, #B721FF 50%, #ff0000 100%);
 			}
         </style>
@@ -37,7 +37,8 @@
 			<!-- header -->
 			<header id="header" style="background-image: url(<?php header_image(); ?>)" class="frow row-between <?php if (!is_home()){ echo "fixed-size"; } ?>" role="banner">
 					<nav class="col-1-3">
-						<button class="jam jam-menu visible-sm hidden-lg"></button>
+						<button onclick="showSideMenu()" class="jam jam-menu visible-sm hidden-lg"></button>
+						
 						<div class="visible-lg hidden-xs hidden-sm hidden-md opacity-0"><?php html5blank_nav(); ?></div>
 					</nav>
 					<!-- logo -->
@@ -50,8 +51,9 @@
 					<!-- /logo -->
 
 					<!-- nav -->
-					<nav role="navigation" class="col-1-3">
-						<div class="visible-lg hidden-xs hidden-sm hidden-md"><?php html5blank_nav(); ?></div>
+					<nav role="navigation" class="col-1-3" style="align-self: flex-start;">
+						<div class="visible-lg hidden-xs hidden-sm hidden-md">
+							<?php html5blank_nav(); ?></div>
 						<button class="jam jam-menu visible-sm hidden-lg opacity-0"></button>
 					</nav>
 					<!-- /nav -->
