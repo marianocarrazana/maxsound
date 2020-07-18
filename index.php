@@ -20,6 +20,7 @@
 		</section>
 		<!-- /section -->
 		<section class="col-md-2-3 frow direction-column">
+			<h1 class="mx-20 mt-20 mb-0 px-20 py-5">Últimos Videos</h1>
 			<div>
 				<div class="mx-20 frow row-start">
 				<?php
@@ -29,13 +30,14 @@
 				foreach ($postslist as $post) :  setup_postdata($post); ?> 
 					<div class="col-md-1-3">
 				    <a class="card mx-20" href="<?php the_permalink(); ?>">
-				    	<div style="background-image:url(<?php echo get_youtube_thumbnail(get_the_content_feed()); ?>)" class="card-video"><i class="jam jam-youtube"></i></div>
+				    	<div style="background-image:url(<?php echo get_youtube_thumbnail(get_the_content_feed()); ?>);height:180px;" class="card-video"><i class="jam jam-youtube"></i></div>
 				        <!--<b class="card-title"><?php the_title(); ?></b>-->
 				    </a>
 					</div>
 				<?php endforeach; ?>
 				</div>
 			</div>
+			<h1 class="mx-20 my-20 px-20 py-5">Galería de Imágenes</h1>
 			<div>
 				<div class="mx-20 frow row-start">
 				<?php

@@ -28,6 +28,7 @@
 				background-image: linear-gradient(311deg, #21D4FD 0%, #B721FF 50%, #ff0000 100%);
 			}
         </style>
+        
 	</head>
 	<body <?php body_class(); ?>>
 

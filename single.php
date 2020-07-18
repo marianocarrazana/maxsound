@@ -10,7 +10,7 @@
 
 			<!-- post thumbnail -->
 			<?php if ( has_post_thumbnail()) : // Check if Thumbnail exists ?>
-				<a class="card-image" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+				<a style="height:auto;" class="card-image" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
 					<?php the_post_thumbnail(); // Fullsize image for the single post ?>
 				</a>
 			<?php endif; ?>
@@ -42,9 +42,8 @@
 		</article>
 		<!-- /article -->
 
-		<div class="card wrapper">
-			<?php comments_template(); ?>
-		</div>
+		<!--<div class="card wrapper">
+		</div>-->
 
 	<?php endwhile; ?>
 
