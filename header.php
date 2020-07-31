@@ -82,3 +82,8 @@
 	};
 	updateSizeHeader();
 </script><?php } ?>
+<div><div class="frow row-between" id="radio_buttons">
+	<a target="_blank" href="https://estudiomaximo.com.ar/wp-content/themes/maxsound/app/">Escuchanos online!</a>
+	<div>|</div>
+	<a href="https://play.google.com/store/apps/details?id=com.larutaproducciones.estudiomaximo">Instala nuestra app!</a>
+</div></div>

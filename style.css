@@ -595,3 +595,26 @@ a{color:white;}
 	opacity:.4;
 	display: block;
 }
+
+#radio_buttons{
+	font-size: 16px;
+    background: white;
+    width: 350px;
+    margin: 0 auto;
+    padding: 10px 5px;
+    color: black!important;
+    border: 2px solid #0f0;
+    border-top: none;
+    background-color: #57ff00;
+    background-image: linear-gradient(19deg, #57ff00 0%, #2165ff 100%);
+    border-radius: 0 0 10px 10px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px white;
+}
+
+#radio_buttons>a{
+	color:#ddd;
+	text-shadow: 1px 1px 2px black;
+	font-weight: bold;
+}
+#radio_buttons>a:hover{color:white;}
