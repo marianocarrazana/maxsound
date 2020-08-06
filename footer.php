@@ -15,6 +15,15 @@
 
 		<?php wp_footer(); ?>
 
-
+	<script type="text/javascript">
+	      if ('serviceWorker' in navigator) {
+	        window.addEventListener('load', () => {
+	          navigator.serviceWorker.register('<?php echo get_template_directory_uri(); ?>/app/service-worker.js')
+	              .then((reg) => {
+	                console.log('Service worker registered.', reg);
+	              });
+	        });
+	      }
+	</script>
 	</body>
 </html>

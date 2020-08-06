@@ -13,6 +13,7 @@
 		<meta name="description" content="<?php bloginfo('description'); ?>">
 		<link rel="stylesheet" href="https://unpkg.com/jam-icons/css/jam.min.css">
 		<link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Open+Sans:ital,wght@0,400;0,600;1,300&display=swap" rel="stylesheet">
+		<link rel="manifest" href="<?php echo get_template_directory_uri(); ?>/app/manifest.json" />
 		<?php wp_head(); ?>
 		<script>
         // conditionizr.com
