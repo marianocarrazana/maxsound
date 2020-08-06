@@ -1,9 +1,9 @@
 var cacheName = 'v1';
 var filesToCache = [
   'index.html',
-  'css/*.css',
-  'js/*.js',
-  'img/*'
+  'css/app.f6509db0.css',
+  'js/app.75cbc465.js','js/chunk-vendors.ca460431.js',
+  'img/background.9473b0df.jpg'
 ];
 
 /* Start the service worker and cache all of the app's content */
