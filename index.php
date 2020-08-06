@@ -25,7 +25,7 @@
 				<div class="mx-20 frow row-start">
 				<?php
 				$cat = get_category_by_slug("videos");
-				$args = array('category'=>$cat->cat_ID, 'numberposts' => 3, 'order'=> 'ASC', 'orderby' => 'post_date' );
+				$args = array('category'=>$cat->cat_ID, 'numberposts' => 3, 'order'=> 'DSC', 'orderby' => 'post_date' );
 				$postslist = get_posts( $args );
 				foreach ($postslist as $post) :  setup_postdata($post); ?> 
 					<div class="col-md-1-3">
@@ -42,7 +42,7 @@
 				<div class="mx-20 frow row-start">
 				<?php
 				$cat = get_category_by_slug("imagenes");
-				$args = array('category'=>$cat->cat_ID, 'numberposts' => 7, 'order'=> 'ASC', 'orderby' => 'post_date' );
+				$args = array('category'=>$cat->cat_ID, 'numberposts' => 7, 'order'=> 'DSC', 'orderby' => 'post_date' );
 				$postslist = get_posts( $args );
 				$n = 0;
 				foreach ($postslist as $post) :  setup_postdata($post); 

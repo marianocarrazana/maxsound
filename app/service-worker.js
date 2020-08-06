@@ -1,4 +1,4 @@
-var cacheName = 'v1';
+var cacheName = 'v2';
 var filesToCache = [
   'index.html',
   'css/app.f6509db0.css',
