@@ -7,6 +7,7 @@
 		<link href="//www.google-analytics.com" rel="dns-prefetch">
         <link href="<?php echo get_template_directory_uri(); ?>/img/icons/favicon.ico" rel="shortcut icon">
         <link href="<?php echo get_template_directory_uri(); ?>/img/icons/touch.png" rel="apple-touch-icon-precomposed">
+        <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/img/icons/favicon.ico" type="image/x-icon">
     	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/frow@3/dist/frow.min.css">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,6 +15,8 @@
 		<link rel="stylesheet" href="https://unpkg.com/jam-icons/css/jam.min.css">
 		<link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Open+Sans:ital,wght@0,400;0,600;1,300&display=swap" rel="stylesheet">
 		<link rel="manifest" href="<?php echo get_template_directory_uri(); ?>/app/manifest.json" />
+  		<script src="https://unpkg.com/scrollreveal"></script>
+  		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 		<?php wp_head(); ?>
 		<script>
         // conditionizr.com
@@ -37,11 +40,11 @@
 		<div class="wrapper">
 			<div id="fake-header" class="opacity-0 <?php if (!is_home()){ echo "fixed-size"; } ?>"></div>
 			<!-- header -->
-			<header id="header" style="background-image: url(<?php header_image(); ?>)" class="frow row-between <?php if (!is_home()){ echo "fixed-size"; } ?>" role="banner">
+
+			<header data-tilt data-tilt-max="2" data-tilt-speed="2" data-tilt-perspective="1200" data-tilt-full-page-listening id="header" style="background-image: url(<?php header_image(); ?>)" class="frow row-between <?php if (!is_home()){ echo "fixed-size"; } ?>" role="banner">
 					<nav class="col-1-3">
 						<button onclick="showSideMenu()" class="jam jam-menu visible-sm hidden-lg"></button>
-						
-						<div class="visible-lg hidden-xs hidden-sm hidden-md opacity-0"><?php html5blank_nav(); ?></div>
+
 					</nav>
 					<!-- logo -->
 					<div class="logo col-1-3">
@@ -54,14 +57,18 @@
 
 					<!-- nav -->
 					<nav role="navigation" class="col-1-3" style="align-self: flex-start;">
-						<div class="visible-lg hidden-xs hidden-sm hidden-md">
-							<?php html5blank_nav(); ?></div>
+						
 						<button class="jam jam-menu visible-sm hidden-lg opacity-0"></button>
 					</nav>
 					<!-- /nav -->
 
 			</header>
 			<!-- /header -->
+			<div class="visible-lg hidden-xs hidden-sm hidden-md" id="nav">
+							<?php html5blank_nav(); ?></div>
+			<a target="_blank" href="https://estudiomaximo.com.ar/wp-content/themes/maxsound/app/" id="marquee">
+				<div><i class="jam jam-play"></i></div>
+			<div id="smarquee">Cargando...</div></a>
 			<?php if (is_home()){ ?>
 				<header id="loader-header" style="background-image: url(<?php header_image(); ?>)" class="frow row-between <?php if (!is_home()){ echo "fixed-size"; } ?>">
 					<div class="loader"></div>
