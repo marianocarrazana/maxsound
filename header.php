@@ -66,7 +66,7 @@
 			<!-- /header -->
 			<div class="visible-lg hidden-xs hidden-sm hidden-md" id="nav">
 							<?php html5blank_nav(); ?></div>
-			<a target="_blank" href="https://estudiomaximo.com.ar/wp-content/themes/maxsound/app/" id="marquee">
+			<a target="_blank" href="https://estudiomaximo.com.ar/wp-content/themes/maxsound/app/index.html" id="marquee">
 				<div><i class="jam jam-play"></i></div>
 			<div id="smarquee">Cargando...</div></a>
 			<?php if (is_home()){ ?>
@@ -91,7 +91,7 @@
 	updateSizeHeader();
 </script><?php } ?>
 <div><div class="frow row-between" id="radio_buttons">
-	<a target="_blank" href="https://estudiomaximo.com.ar/wp-content/themes/maxsound/app/">Escuchanos online!</a>
+	<a target="_blank" href="https://estudiomaximo.com.ar/wp-content/themes/maxsound/app/index.html">Escuchanos online!</a>
 	<div>|</div>
 	<a href="https://play.google.com/store/apps/details?id=com.larutaproducciones.estudiomaximo">Instala nuestra app!</a>
 </div></div>
