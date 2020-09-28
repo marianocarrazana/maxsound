@@ -1,3 +1,6 @@
+	<div style="text-align: center;margin: 1em">		<!-- Start of WebFreeCounter Code -->
+<a href="https://www.webfreecounter.com/" target="_blank"><img src="https://www.webfreecounter.com/hit.php?id=gfoxda&nd=6&style=22" border="0" alt="hit counter"></a>
+<!-- End of WebFreeCounter Code --></div>
 			<!-- footer -->
 			<footer class="footer" role="contentinfo">
 
@@ -32,7 +35,7 @@
 						var newText = "";
 					    if (this.status == 200) {
 					      	data = JSON.parse(this.responseText);
-					      	if(data.activestreams1==1)newText = "Radio Offline";
+					      	if(data.activestreams!==1)newText = "Radio Offline";
 					      	else{
 					      		newText = data.streams[0].songtitle;
 					      		if(newText==="")newText = "Radio Online";

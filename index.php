@@ -4,10 +4,22 @@
 		<!-- section -->
 		<section class="col-md-1-3">
 			<div class="frow m-20 direction-column column-start">
+			<h1 class="mx-20 my-5 px-10">Artistas Locales</h1>
+
+			<?php
+			$cat = get_category_by_slug("locales");
+			$args = array( 'category'=>$cat->cat_ID, 'numberposts' => 4, 'order'=> 'DSC', 'orderby' => 'post_date' );
+			$postslist = get_posts( $args );
+			foreach ($postslist as $post) :  setup_postdata($post); ?> 
+				    <a class="card m-30" style="width:80%" data-aos='flip-left' href="<?php the_permalink(); ?>">
+				    	<div style="background-image:url(<?php echo get_youtube_thumbnail(get_the_content_feed()); ?>);height:180px;" class="card-video"><i class="jam jam-youtube"></i></div>
+				        <!--<b class="card-title"><?php the_title(); ?></b>-->
+				    </a>
+				<?php endforeach; ?>
 			<h1 class="mx-20 my-5 px-10">Actualizaciones</h1>
 
 			<?php
-			$args = array( 'category'=>1, 'numberposts' => 8, 'order'=> 'DSC', 'orderby' => 'post_date' );
+			$args = array( 'category'=>1, 'numberposts' => 3, 'order'=> 'DSC', 'orderby' => 'post_date' );
 			$postslist = get_posts( $args );
 			foreach ($postslist as $post) :  setup_postdata($post); ?> 
 			    <a class="card p-10" data-aos="fade-right" href="<?php the_permalink(); ?>">
