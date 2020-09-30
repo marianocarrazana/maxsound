@@ -14,6 +14,73 @@
 /*------------------------------------*\
 	Theme Support
 \*------------------------------------*/
+function my_theme_options( $wp_customize ) {
+    // Sections, settings and controls will be added here
+    $wp_customize->add_section( 
+        'radio_options', 
+        array(
+            'title'       => __( 'Radio Settings', 'mytheme' ),
+            'priority'    => 100,
+            'capability'  => 'edit_theme_options',
+            'description' => __('Change Radio options here.', 'mytheme'), 
+        ) 
+    );
+    $wp_customize->add_setting( 'radio_url',
+        array(
+            'default' => "https://stream.larutaproducciones.com.ar/8126",
+            'type' => 'theme_mod',
+            'capability' => 'edit_theme_options'
+        )
+    );  
+    register_setting( 'myoption-group', 'new_option_name' );
+    $wp_customize->add_setting( 'radio_app_url',
+        array(
+            'default' => 'https://play.google.com/store/apps/details?id=com.larutaproducciones.estudiomaximo',
+            'type' => 'theme_mod',
+            'capability' => 'edit_theme_options'
+        )
+    ); 
+    $wp_customize->add_setting( 'radio_statistics_url',
+        array(
+            'default' => 'https://stream.larutaproducciones.com.ar/8126/statistics',
+            'type' => 'theme_mod',
+            'capability' => 'edit_theme_options'
+        )
+    );  
+    $wp_customize->add_control( new WP_Customize_Control( 
+        $wp_customize, 
+            'radio_url_control',
+            array(
+                'label'    => __( 'Radio URL', 'mytheme' ), 
+                'section'  => 'radio_options',
+                'settings' => 'radio_url',
+                'priority' => 10,
+            ) 
+    ));
+    $wp_customize->add_control( new WP_Customize_Control( 
+        $wp_customize, 
+            'radio_statistics_url_control',
+            array(
+                'label'    => __( 'Radio statistics URL', 'mytheme' ), 
+                'section'  => 'radio_options',
+                'settings' => 'radio_statistics_url',
+                'priority' => 10,
+            ) 
+    ));
+    $wp_customize->add_control( new WP_Customize_Control( 
+        $wp_customize, 
+            'radio_app_url_control',
+            array(
+                'label'    => __( 'Radio App URL', 'mytheme' ), 
+                'section'  => 'radio_options',
+                'settings' => 'radio_app_url',
+                'priority' => 10,
+            ) 
+    ));
+    var_dump(get_theme_mod("radio_app_url"));
+
+}
+add_action( 'customize_register' , 'my_theme_options' );
 function maxsound_custom_header_setup() {
     $args = array(
         'default-image'      => get_template_directory_uri() . '/img/header.jpg',
@@ -34,6 +101,10 @@ if (!isset($content_width))
 
 if (function_exists('add_theme_support'))
 {
+    add_theme_support( 'custom-logo', array(
+        'height' => 143,
+        'width'  => 556,
+    ) );
     // Add Menu Support
     add_theme_support('menus');
 

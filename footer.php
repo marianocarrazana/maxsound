@@ -20,9 +20,8 @@
 		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/vanilla-tilt.babel.min.js"></script>
 	<script  type="text/javascript"  src="<?php echo get_template_directory_uri(); ?>/js/smarquee.js"></script>
-
 	<script type="text/javascript">
-		var radioStats = "https://stream.larutaproducciones.com.ar/8126/statistics";
+		var radioStats = "<?php echo get_theme_mod( 'radio_statistics_url' ); ?>";
 		var smarquee = null;
 		var marqueeText = "Cargando...";
 	        window.addEventListener('load', () => {

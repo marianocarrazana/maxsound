@@ -42,21 +42,27 @@
 			<!-- header -->
 
 			<header data-tilt data-tilt-max="2" data-tilt-speed="2" data-tilt-perspective="1200" data-tilt-full-page-listening id="header" style="background-image: url(<?php header_image(); ?>)" class="frow row-between <?php if (!is_home()){ echo "fixed-size"; } ?>" role="banner">
-					<nav class="col-1-3">
+					<nav class="col-xs-1-6">
 						<button onclick="showSideMenu()" class="jam jam-menu visible-sm hidden-lg"></button>
 
 					</nav>
 					<!-- logo -->
-					<div class="logo col-1-3">
+					<div class="logo col-xs-4-6">
 						<a href="<?php echo home_url(); ?>">
 							<!-- svg logo - toddmotto.com/mastering-svg-use-for-a-retina-web-fallbacks-with-png-script -->
-							<div class="logo-img"><?php echo get_bloginfo("title"); ?></div>
+							<div class="logo-img">
+								<?php if(has_custom_logo()){ ?>
+								<img id="custom-logo" alt="<?php echo get_bloginfo('title'); ?>" src="<?php the_custom_logo(); ?>">
+							<?php }else{ ?>
+								 <img id="custom-logo" alt="<?php echo get_bloginfo('title'); ?>" src="<?php echo get_template_directory_uri(); ?>/img/logo.png">
+							<?php } ?>
+							</div>
 						</a>
 					</div>
 					<!-- /logo -->
 
 					<!-- nav -->
-					<nav role="navigation" class="col-1-3" style="align-self: flex-start;">
+					<nav role="navigation" class="col-xs-1-6" style="align-self: flex-start;">
 						
 						<button class="jam jam-menu visible-sm hidden-lg opacity-0"></button>
 					</nav>
@@ -66,7 +72,7 @@
 			<!-- /header -->
 			<div class="visible-lg hidden-xs hidden-sm hidden-md" id="nav">
 							<?php html5blank_nav(); ?></div>
-			<a target="_blank" href="https://estudiomaximo.com.ar/wp-content/themes/maxsound/app/index.html" id="marquee">
+			<a target="_blank" href="<?php echo get_template_directory_uri(); ?>/app/index.html" id="marquee">
 				<div><i class="jam jam-play"></i></div>
 			<div id="smarquee">Cargando...</div></a>
 			<?php if (is_home()){ ?>
@@ -87,11 +93,12 @@
 		var height = headerHeight - window.scrollY;
 		if(height>68)header.style.height = height + "px";
 		else header.style.height = "68px";
+		document.getElementById("custom-logo").style.maxHeight = header.style.height;
 	};
 	updateSizeHeader();
 </script><?php } ?>
 <div><div class="frow row-between" id="radio_buttons">
-	<a target="_blank" href="https://estudiomaximo.com.ar/wp-content/themes/maxsound/app/index.html">Escuchanos online!</a>
+	<a target="_blank" href="<?php echo get_template_directory_uri(); ?>/app/index.html">Escuchanos online!</a>
 	<div>|</div>
-	<a href="https://play.google.com/store/apps/details?id=com.larutaproducciones.estudiomaximo">Instala nuestra app!</a>
+	<a href="<?php echo get_theme_mod( 'radio_app_url' ); ?>">Instala nuestra app!</a>
 </div></div>
