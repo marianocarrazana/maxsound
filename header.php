@@ -51,8 +51,11 @@
 						<a href="<?php echo home_url(); ?>">
 							<!-- svg logo - toddmotto.com/mastering-svg-use-for-a-retina-web-fallbacks-with-png-script -->
 							<div class="logo-img">
-								<?php if(has_custom_logo()){ ?>
-								<img id="custom-logo" alt="<?php echo get_bloginfo('title'); ?>" src="<?php the_custom_logo(); ?>">
+								<?php if(has_custom_logo()){ 
+									$custom_logo_id = get_theme_mod( 'custom_logo' );
+        							$logo_meta = wp_get_attachment_image_src($custom_logo_id,'full');
+       						 ?>
+								<img id="custom-logo" alt="<?php echo get_bloginfo('title'); ?>" src="<?php echo $logo_meta[0]; ?>">
 							<?php }else{ ?>
 								 <img id="custom-logo" alt="<?php echo get_bloginfo('title'); ?>" src="<?php echo get_template_directory_uri(); ?>/img/logo.png">
 							<?php } ?>
