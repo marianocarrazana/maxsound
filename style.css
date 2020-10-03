@@ -651,3 +651,6 @@ a{color:white;}
 	font-weight: bold;
 	user-select: none;
 }
+#custom-logo{
+	max-height:68px;
+}
